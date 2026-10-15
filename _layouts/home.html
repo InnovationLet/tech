@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">{{ site.category_name }} &middot; InnovationLet</p>
+    <h1 class="hero__title">{{ site.hero_title | default: site.tagline }}</h1>
+    <p class="hero__lead">{{ site.hero_lead | default: site.description }}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#latest">Read the latest</a>
+      <a class="btn btn--secondary" href="{{ site.main_site }}/#categories">All categories &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="latest" class="section">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title">Latest in {{ site.category_name }}</h2>
+      <a class="section__link" href="{{ '/archive.html' | relative_url }}">All stories &rarr;</a>
+    </div>
+    <div class="post-grid">
+      {% for post in site.posts limit: 6 %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% assign body = content | strip %}
+{% if body != "" and body != nil %}
+<section class="section">
+  <div class="wrap wrap--narrow prose">
+    {{ content }}
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title">More from InnovationLet</h2>
+    </div>
+    <div class="cat-grid">
+      {% for cat in site.data.categories %}
+      <a class="cat-card" href="{{ site.url }}{{ cat.url }}" data-accent="{{ cat.accent }}">
+        <span class="cat-card__dot" aria-hidden="true"></span>
+        <span class="cat-card__body">
+          <span class="cat-card__name">{{ cat.name }}</span>
+          <span class="cat-card__meta">innovationlet.github.io{{ cat.url }}</span>
+        </span>
+        <span class="cat-card__arrow" aria-hidden="true">&rarr;</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

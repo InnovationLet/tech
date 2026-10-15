@@ -1,0 +1,13 @@
+<article class="post-card">
+  <a class="post-card__link" href="{{ post.url | relative_url }}">
+    {% if post.tags.size > 0 %}
+    <span class="tag">{{ post.tags | first }}</span>
+    {% endif %}
+    <h3 class="post-card__title">{{ post.title | escape }}</h3>
+    <p class="post-card__excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 150 }}</p>
+    <span class="post-card__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      &middot; {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read
+    </span>
+  </a>
+</article>

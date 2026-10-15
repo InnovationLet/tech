@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="InnovationLet">
+  <rect width="64" height="64" rx="14" fill="#07080a"/>
+  <rect x="0.5" y="0.5" width="63" height="63" rx="13.5" fill="none" stroke="#242728"/>
+  <text x="50%" y="53%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600"
+        fill="#f4f4f6" letter-spacing="0.5">iL</text>
+</svg>

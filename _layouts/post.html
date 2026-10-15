@@ -1,30 +1,65 @@
 ---
 layout: default
 ---
-<link href="/css/override.css" rel="stylesheet" type="text/css">
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
+{% assign words = content | number_of_words %}
+{% assign readtime = words | divided_by: 200 | plus: 1 %}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {% assign author = page.author | default: site.author %}
-      {%- if author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-      {%- endif -%}</p>
+    <div class="wrap wrap--narrow">
+      {% if page.tags.size > 0 %}
+      <span class="tag" itemprop="articleSection">{{ page.tags | first }}</span>
+      {% endif %}
+      <h1 class="post-title" itemprop="headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        {% if page.updated %}
+        &middot; Updated <time itemprop="dateModified" datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%b %-d, %Y" }}</time>
+        {% endif %}
+        &middot; <span>{{ readtime }} min read</span>
+        {% assign author = page.author | default: site.author %}
+        {% if author %}
+        &middot; <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ author }}</span></span>
+        {% endif %}
+      </p>
+    </div>
   </header>
 
-  <div class="share-links">
-    {% include sharelinks.html %}
-  </div>
-
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="wrap wrap--narrow post-body" itemprop="articleBody">
     {{ content }}
-    {% include navlinks.html %}
   </div>
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  <footer class="wrap wrap--narrow">
+    {% include sharelinks.html %}
+    {% include navlinks.html %}
+  </footer>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.updated | default: page.date | date_to_xmlschema | jsonify }},
+  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "image": ["{{ site.url }}{{ site.baseurl }}/assets/images/og-image.png"],
+  "author": {
+    "@type": "Person",
+    "name": {{ page.author | default: site.author | jsonify }},
+    "url": "{{ site.url }}{{ site.baseurl }}/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "InnovationLet",
+    "url": {{ site.main_site | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.baseurl }}/favicon.svg"
+    }
+  },
+  "articleSection": {{ page.tags | first | default: site.category_name | jsonify }},
+  "inLanguage": {{ site.lang | default: "en" | jsonify }}
+}
+</script>

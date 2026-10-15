@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <span class="brand__mark" aria-hidden="true">iL</span>
+      <p>InnovationLet is an independent technology publication covering artificial intelligence, space, finance, startups, economy, tech, governments and gaming.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Categories">
+      <h3>Categories</h3>
+      <ul>
+        {% for cat in site.data.categories %}
+        <li><a href="{{ site.url }}{{ cat.url }}">{{ cat.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h3>Follow</h3>
+      <ul>
+        <li><a href="https://twitter.com/{{ site.twitter_username }}" rel="noopener">X / Twitter</a></li>
+        <li><a href="https://github.com/{{ site.github_username }}" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/company/{{ site.linkedin_username }}" rel="noopener">LinkedIn</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap site-footer__bottom">
+    <span>&copy; {{ 'now' | date: "%Y" }} InnovationLet. By the <a href="https://f9xr.org" rel="noopener">F9XR Team</a>.</span>
+    <span>Technology &amp; innovation, decoded.</span>
+  </div>
+</footer>

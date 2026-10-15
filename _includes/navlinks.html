@@ -1,21 +1,25 @@
-<hr>
-<div class="post_navi">
-  {%- if page.previous.url -%}
-  <a class="post_navi-item nav_prev" href="{{ page.previous.url }}" title="{{ page.previous.title }}">
-    <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Previous Post</div><div><span>{{ page.previous.title }}</span></div>
+<nav class="post-navi" aria-label="Post navigation">
+  {% if page.previous.url %}
+  <a class="post-navi__item post-navi__prev" href="{{ page.previous.url | relative_url }}" rel="prev">
+    <span class="post-navi__label">Newer</span>
+    <span class="post-navi__title">{{ page.previous.title | escape }}</span>
   </a>
-  {%- else -%}
-  <a class="post_navi-item nav_prev" href="{{ 'archive.html' | absolute_url }}" title="Blog Archive">
-    <div class="post_navi-arrow">&lt;</div><div class="post_navi-label">Blog Archive</div><div><span>Archive of all previous blog posts</span></div>
+  {% else %}
+  <a class="post-navi__item post-navi__prev" href="{{ '/archive.html' | relative_url }}">
+    <span class="post-navi__label">Back to</span>
+    <span class="post-navi__title">All stories</span>
   </a>
-  {%- endif -%}
-  {%- if page.next.url -%}
-  <a class="post_navi-item nav_next" href="{{ page.next.url }}" title="{{ page.next.title }}">
-    <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Next Post</div><div><span>{{ page.next.title }}</span></div>
+  {% endif %}
+
+  {% if page.next.url %}
+  <a class="post-navi__item post-navi__next" href="{{ page.next.url | relative_url }}" rel="next">
+    <span class="post-navi__label">Older</span>
+    <span class="post-navi__title">{{ page.next.title | escape }}</span>
   </a>
-  {%- else -%}
-  <a class="post_navi-item nav_next" href="{{ 'archive.html' | absolute_url }}" title="Blog Archive">
-    <div class="post_navi-arrow">&gt;</div><div class="post_navi-label">Blog Archive</div><div><span>Archive of all previous blog posts</span></div>
+  {% else %}
+  <a class="post-navi__item post-navi__next" href="{{ '/archive.html' | relative_url }}">
+    <span class="post-navi__label">Browse</span>
+    <span class="post-navi__title">The full archive</span>
   </a>
-  {%- endif -%}
-</div>
+  {% endif %}
+</nav>

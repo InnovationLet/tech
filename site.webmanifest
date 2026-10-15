@@ -1,0 +1,22 @@
+---
+layout: null
+sitemap: false
+---
+{
+  "name": {{ site.title | jsonify }},
+  "short_name": {{ site.short_title | default: "InnovationLet" | jsonify }},
+  "description": {{ site.description | strip_newlines | jsonify }},
+  "start_url": "{{ site.baseurl }}/",
+  "scope": "{{ site.baseurl }}/",
+  "display": "standalone",
+  "background_color": "#07080a",
+  "theme_color": "#07080a",
+  "icons": [
+    {
+      "src": "{{ site.baseurl }}/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
