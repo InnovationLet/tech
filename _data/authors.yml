@@ -14,8 +14,9 @@
 "F9XR News Desk":
   type: "Organization"
   name: "F9XR News Desk"
+  slug: "f9xr-news-desk"
   title: "Reported by the F9XR News Desk · InnovationLet Tech"
-  url: "https://f9xr.org/"
+  url: "/author/f9xr-news-desk/"
   image: "/assets/images/og-image.png"
   sameAs:
     - "https://f9xr.org/"
@@ -32,8 +33,9 @@
 "InnovationLet Editorial":
   type: "Organization"
   name: "InnovationLet Editorial"
+  slug: "innovationlet-editorial"
   title: "Reported and edited by the Tech desk"
-  url: "/about/"
+  url: "/author/innovationlet-editorial/"
   image: "/assets/images/og-image.png"
   sameAs:
     - "https://twitter.com/innovationlet"

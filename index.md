@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Technology news, devices and engineering analysis"
+title: "Technology news, devices, engineering"
 description: "InnovationLet Tech reports on devices, software, platforms, and the engineering decisions that shape modern technology. Independent tech news and analysis."
 ---
 

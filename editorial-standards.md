@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Editorial standards"
-description: "How InnovationLet Tech sources, verifies, corrects and labels its reporting, including our policy on AI use."
+description: "How InnovationLet Tech sources, verifies and corrects its reporting, our byline and AI-use policies, and how the desk labels sponsored content."
 permalink: /editorial-standards/
 updated: 2026-10-16
 ---
@@ -16,7 +16,7 @@ InnovationLet Tech is part of InnovationLet, an independent technology publicati
 
 ## Bylines and accountability
 
-Every story carries a byline. Desk-wide reporting is published under [InnovationLet Editorial]({{ '/about/' | relative_url }}), which means the piece was reported and edited by the Tech desk team. Contributed and guest pieces are labeled as such and name the contributor. We do not publish anonymous bylines on reported news.
+Every story carries a byline. Desk-wide reporting is published under [InnovationLet Editorial]({{ '/author/innovationlet-editorial/' | relative_url }}), which means the piece was reported and edited by the Tech desk team. Contributed and guest pieces are labeled as such and name the contributor. We do not publish anonymous bylines on reported news.
 
 ## Corrections
 

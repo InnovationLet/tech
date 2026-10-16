@@ -79,6 +79,10 @@ feed:
 
 show_excerpts: true
 
+# Publish posts dated later than the build time. News desks date stories to the
+# day they run, which is often ahead of the UTC build clock.
+future: true
+
 markdown: kramdown
 kramdown:
   input: GFM

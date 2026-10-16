@@ -1,0 +1,73 @@
+---
+layout: default
+---
+{% assign key = page.author_key %}
+{% assign author = site.data.authors[key] %}
+<article class="page author-page">
+  <header class="page-header">
+    <div class="wrap wrap--narrow">
+      <p class="author-page__eyebrow">Author</p>
+      <h1 class="page-header__title">{{ author.name | default: page.title | escape }}</h1>
+      {% if author.title %}<p class="page-header__lead">{{ author.title }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="wrap wrap--narrow prose">
+    {% if author %}
+    <div class="author-page__bio">
+      <span class="author-card__avatar" aria-hidden="true">iL</span>
+      <div class="author-page__bio-text">
+        {% if author.bio %}<p>{{ author.bio | strip_newlines }}</p>{% endif %}
+        {% if author.sameAs %}
+        <ul class="author-card__social">
+          {% for profile in author.sameAs %}
+          <li>
+            <a href="{{ profile }}" rel="noopener me" target="_blank" aria-label="{{ author.name }} profile">
+              {% assign host = profile | split: '//' | last | split: '/' | first | downcase %}
+              {% if host contains 'linkedin' %}{% assign net = 'linkedin' %}
+              {% elsif host contains 'instagram' %}{% assign net = 'instagram' %}
+              {% elsif host contains 'youtube' %}{% assign net = 'youtube' %}
+              {% elsif host contains 'pinterest' %}{% assign net = 'pinterest' %}
+              {% elsif host contains 'github' %}{% assign net = 'github' %}
+              {% elsif host contains 'twitter' or host contains 'x.com' %}{% assign net = 'twitter' %}
+              {% else %}{% assign net = 'globe' %}{% endif %}
+              {% include icon.html name=net size=16 %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    {{ content }}
+
+    <h2 class="author-page__posts-title">Stories by {{ author.name | default: 'this desk' }}</h2>
+    {% assign found = 0 %}
+    <ul class="author-page__posts">
+      {% for post in site.posts %}
+      {% if post.author == key %}
+      {% assign found = found | plus: 1 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% if found == 0 %}<li class="author-page__empty">No stories have been filed under this byline yet.</li>{% endif %}
+    </ul>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {{ author.type | default: "Organization" | jsonify }},
+  "name": {{ author.name | default: page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "description": {{ author.bio | strip_newlines | jsonify }},
+  {% if author.image %}"image": {{ author.image | absolute_url | jsonify }},{% endif %}
+  "sameAs": {{ author.sameAs | jsonify }}
+}
+</script>

@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Authors"
+permalink: /author/
+description: "The reporting desks and authors behind InnovationLet Tech, with bios, external profiles and the stories each byline has filed on this desk."
+---
+<article class="page">
+  <header class="page-header">
+    <div class="wrap wrap--narrow">
+      <h1 class="page-header__title">Authors</h1>
+      <p class="page-header__lead">The desks and reporters behind InnovationLet Tech, and how each byline is produced.</p>
+    </div>
+  </header>
+  <div class="wrap wrap--narrow">
+    <ul class="author-list">
+      {% for pair in site.data.authors %}
+      {% assign entry = pair[1] %}
+      <li class="author-list__item">
+        <span class="author-card__avatar" aria-hidden="true">iL</span>
+        <div class="author-list__body">
+          <a class="author-list__name" href="{{ entry.url | relative_url }}">{{ entry.name }}</a>
+          {% if entry.title %}<p class="author-list__role">{{ entry.title }}</p>{% endif %}
+          {% if entry.bio %}<p class="author-list__bio">{{ entry.bio | strip_newlines }}</p>{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</article>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About InnovationLet Tech"
-description: "Who runs InnovationLet Tech, what we cover, how we are funded, and how we report on technology."
+description: "Who runs InnovationLet Tech, what the desk covers, how the publication is funded, how we report on technology, and how to report an error in our coverage."
 permalink: /about/
 updated: 2026-10-16
 ---
@@ -17,7 +17,7 @@ We read the primary sources so you don't have to. Release notes, standards draft
 - **Primary sources first.** Every factual claim links to where it came from.
 - **No vendor copy.** If a company says something is a breakthrough, we ask what it replaces.
 - **Say what we don't know.** Uncertainty gets stated, not hidden behind confident phrasing.
-- **Named accountability.** Stories carry a byline. Desk-wide reporting runs under [InnovationLet Editorial]({{ '/about/' | relative_url }}), and we correct errors openly.
+- **Named accountability.** Stories carry a byline. Desk-wide reporting runs under [InnovationLet Editorial]({{ '/author/innovationlet-editorial/' | relative_url }}), and we correct errors openly.
 
 The full standards, including our policy on AI-assisted reporting, are on the [editorial standards]({{ '/editorial-standards/' | relative_url }}) page.
 
