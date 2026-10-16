@@ -1,7 +1,20 @@
+{%- assign home_url = site.main_site | default: '/' -%}
+{%- assign desk_name = site.short_title | default: site.category_name | default: 'Tech' -%}
+{%- assign desk_url = '/' | relative_url -%}
+{%- assign crumb_author = nil -%}
+{%- if page.layout == 'post' and page.author -%}
+  {%- assign crumb_author = site.data.authors[page.author] -%}
+{%- endif -%}
 <nav class="breadcrumbs" aria-label="Breadcrumb">
   <ol class="breadcrumbs__list">
-    <li class="breadcrumbs__item"><a href="{{ '/' | relative_url }}">{{ site.category_name | default: 'Home' }}</a></li>
-    <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">{{ page.title | escape }}</li>
+    <li class="breadcrumbs__item"><a href="{{ home_url }}">Home</a></li>
+    <li class="breadcrumbs__item"><a href="{{ desk_url }}">{{ desk_name }}</a></li>
+    {%- if page.layout == 'author' -%}
+    <li class="breadcrumbs__item"><a href="{{ '/author/' | relative_url }}">Authors</a></li>
+    {%- elsif page.layout == 'post' and crumb_author -%}
+    <li class="breadcrumbs__item"><a href="{{ crumb_author.url | relative_url }}">{{ crumb_author.name | default: page.author }}</a></li>
+    {%- endif -%}
+    <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">{{ page.title | default: site.title | escape }}</li>
   </ol>
 </nav>
 <script type="application/ld+json">
@@ -12,12 +25,37 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": {{ site.category_name | default: "Home" | jsonify }},
-      "item": {{ '/' | absolute_url | jsonify }}
+      "name": "Home",
+      "item": {{ home_url | jsonify }}
     },
     {
       "@type": "ListItem",
       "position": 2,
+      "name": {{ desk_name | jsonify }},
+      "item": {{ desk_url | absolute_url | jsonify }}
+    }
+    {%- assign pos = 2 -%}
+    {%- if page.layout == 'author' -%}
+    {%- assign pos = pos | plus: 1 -%},
+    {
+      "@type": "ListItem",
+      "position": {{ pos }},
+      "name": "Authors",
+      "item": {{ '/author/' | absolute_url | jsonify }}
+    }
+    {%- elsif page.layout == 'post' and crumb_author -%}
+    {%- assign pos = pos | plus: 1 -%},
+    {
+      "@type": "ListItem",
+      "position": {{ pos }},
+      "name": {{ crumb_author.name | default: page.author | jsonify }},
+      "item": {{ crumb_author.url | absolute_url | jsonify }}
+    }
+    {%- endif -%}
+    {%- assign pos = pos | plus: 1 -%},
+    {
+      "@type": "ListItem",
+      "position": {{ pos }},
       "name": {{ page.title | default: site.title | jsonify }}
     }
   ]

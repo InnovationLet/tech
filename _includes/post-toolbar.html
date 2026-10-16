@@ -19,6 +19,18 @@
     <span class="tool__label">Print</span>
   </button>
 
+  <div class="tool tool--group translate" data-translate>
+    <button class="tool__btn tool__translate-toggle" type="button" data-translate-toggle aria-haspopup="true" aria-expanded="false">
+      {% include icon.html name="languages" size=16 %}
+      <span class="tool__label">Translate</span>
+    </button>
+    <div class="translate__panel" data-translate-panel hidden role="menu" aria-label="Translate this article">
+      <p class="translate__hint">Translate this article into:</p>
+      <div class="translate__langs" data-translate-langs></div>
+    </div>
+    <div id="google_translate_element" aria-hidden="true"></div>
+  </div>
+
   <button class="tool" type="button" data-share hidden>
     {% include icon.html name="share" size=16 %}
     <span class="tool__label">Share</span>

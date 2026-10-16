@@ -13,6 +13,7 @@ layout: default
 {% if page.updated and updated_key != published_key %}{% assign show_updated = true %}{% endif %}
 {% assign topic_keywords = page.keywords | default: page.tags %}
 <article class="post">
+  {% include trending.html %}
   <header class="post-header">
     <div class="wrap wrap--narrow">
       {% include breadcrumbs.html %}
@@ -24,7 +25,7 @@ layout: default
       <h1 class="post-title">{{ page.title | escape }}</h1>
       {% if page.subtitle %}<p class="post-standfirst">{{ page.subtitle | escape }}</p>{% endif %}
       <p class="post-meta">
-        <span class="post-meta__author">By {{ author.name | default: author_name }}</span>
+        <span class="post-meta__author">By <a href="{{ author.url | default: '/author/' | relative_url }}">{{ author.name | default: author_name }}</a></span>
         <span class="post-meta__sep" aria-hidden="true">&middot;</span>
         <span>{{ readtime }} min read</span>
         {% if show_updated %}

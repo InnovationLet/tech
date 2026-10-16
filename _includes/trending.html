@@ -1,0 +1,23 @@
+{%- assign trending = site.posts | slice: 0, 5 -%}
+{%- if trending.size > 0 -%}
+<section class="trending-strip" aria-label="Trending now">
+  <div class="wrap wrap--narrow">
+    <div class="trending">
+      <span class="trending__label"><span class="trending__dot" aria-hidden="true"></span>Trending now</span>
+      <div class="trending__viewport">
+        <div class="trending__track">
+          {%- for pass in (1..2) -%}
+          <div class="trending__group"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+            {%- for rep in (1..2) -%}
+              {%- for post in trending -%}
+              <a class="trending__item" href="{{ post.url | relative_url }}"{% if pass > 1 or rep > 1 %} tabindex="-1" aria-hidden="true"{% endif %}>{{ post.title | escape }}</a>
+              {%- endfor -%}
+            {%- endfor -%}
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}

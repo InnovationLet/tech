@@ -6,6 +6,7 @@ layout: default
 <article class="page author-page">
   <header class="page-header">
     <div class="wrap wrap--narrow">
+      {% include breadcrumbs.html %}
       <p class="author-page__eyebrow">Author</p>
       <h1 class="page-header__title">{{ author.name | default: page.title | escape }}</h1>
       {% if author.title %}<p class="page-header__lead">{{ author.title }}</p>{% endif %}

@@ -24,23 +24,12 @@ Apple's first foldable is no longer a rumor. The company unveiled the **iPhone D
   <figcaption>The iPhone Duo, Apple's first foldable phone. Image: Apple</figcaption>
 </figure>
 
-So which one should you buy? Short answer: the Galaxy Z Fold8 is lighter, thinner and cheaper, and it is the more mature foldable today. The iPhone Duo has a newer chip, an IP68 rating, a very large battery-life claim and the Apple ecosystem behind it. This guide walks through both phones using official specifications from Apple and Samsung, plus early comparison data from independent outlets. Where something has not been independently tested yet, we say so.
+So which one should you buy? Short answer: the Galaxy Z Fold8 is lighter, thinner and cheaper, and it is the more mature foldable today. The iPhone Duo has a newer chip, an IP68 rating, a very large battery-life claim and the Apple ecosystem behind it. This guide walks through both phones using official specifications from Apple and Samsung, plus early comparison data from independent outlets. Where something has not been independently tested yet, we say so, in line with [our editorial standards]({{ '/editorial-standards/' | relative_url }}).
 
 <figure class="post-figure">
   <img src="{{ '/assets/images/galaxy-z-fold8.jpg' | relative_url }}" alt="Samsung Galaxy Z Fold8 shown with its cover display and inner display open" width="1920" height="930" loading="lazy" decoding="async">
   <figcaption>The Galaxy Z Fold8, Samsung's new wider fold. Image: Samsung</figcaption>
 </figure>
-
-## Key takeaways
-
-- **Price:** iPhone Duo starts at $1,999 for 256GB. The Galaxy Z Fold8 starts at $1,899.99. The larger Galaxy Z Fold8 Ultra starts at $2,099.99.
-- **Screens are nearly identical:** both phones open to a 7.6-inch inner display, and the outer screens measure 5.4 inches (Duo) and 5.5 inches (Fold8).
-- **Weight is the biggest gap:** the Duo weighs 254g, the Fold8 weighs 201g. That is a 53g difference you will feel every day.
-- **Thickness:** the Fold8 is 4.5mm open and 9.7mm closed. The Duo is 5.2mm open and 11.3mm closed.
-- **Chips:** Duo uses Apple's A20 Pro on a 2nm process. Fold8 uses the Snapdragon 8 Elite Gen 5 for Galaxy.
-- **Battery:** Apple does not publish a capacity for the Duo and claims up to 24 hours of typical use. Samsung lists 4,800mAh for the Fold8 and up to 26 hours of video playback. These claims use different methods, so they cannot be compared directly.
-- **Availability:** the Fold8 is in stores now. The Duo is reported to have sold out quickly at pre-order, with delivery estimates slipping to late January.
-- **Software:** Duo runs iOS 27 and supports Split View for two apps side by side. Fold8 runs Android 17 with One UI 9 and includes Samsung DeX, a desktop mode the Duo does not have.
 
 ## What is the iPhone Duo?
 
@@ -171,35 +160,54 @@ There is no universal winner. The Galaxy Z Fold8 is the safer and more practical
 
 If you are an iPhone user, the Duo is worth considering once independent reviews arrive. If you are on Android, or you simply want a foldable you can buy and carry comfortably this week, the Fold8 is easier to recommend.
 
+## Key takeaways
+
+<ul class="key-takeaways">
+  <li><strong>Cheaper and lighter:</strong> the Galaxy Z Fold8 undercuts the iPhone Duo ($1,899.99 vs $1,999) and is 53g lighter (201g vs 254g).</li>
+  <li><strong>Buy now or wait:</strong> the Fold8 is on shelves today, while early reports put Duo delivery estimates in late January.</li>
+  <li><strong>Durability edge:</strong> the Duo carries an IP68 rating; the standard Fold8's rating was not confirmed in the sources we reviewed, and the Fold8 Ultra is IP48.</li>
+  <li><strong>Software maturity:</strong> Samsung's One UI 9 and DeX remain the most flexible foldable multitasking, while the Duo leans on Apple's ecosystem.</li>
+  <li><strong>Unproven claims:</strong> Apple's battery and sustained-performance figures for the Duo have not been independently tested yet.</li>
+</ul>
+
+For more device coverage, browse the [InnovationLet Tech archive]({{ '/archive.html' | relative_url }}). This guide was produced by the [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}); corrections and tips go to the [contact page]({{ '/contact/' | relative_url }}).
+
 ## Frequently asked questions
 
-### What is the iPhone Duo?
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">What is the iPhone Duo?</h3></summary>
+<div class="faq__a"><p>The iPhone Duo is Apple's first foldable iPhone. It has a 5.4-inch outer display, a 7.6-inch inner folding display, the A20 Pro chip, a 48MP dual rear camera system and starts at $1,999.</p></div>
+</details>
 
-The iPhone Duo is Apple's first foldable iPhone. It has a 5.4-inch outer display, a 7.6-inch inner folding display, the A20 Pro chip, a 48MP dual rear camera system and starts at $1,999.
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">When can I buy the iPhone Duo?</h3></summary>
+<div class="faq__a"><p>Apple opened pre-orders on October 16, 2026, with availability beginning October 23 in more than 70 countries and regions. Another 28 countries and regions follow on October 30. Early reports say delivery estimates have slipped to late January.</p></div>
+</details>
 
-### When can I buy the iPhone Duo?
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">Is the Galaxy Z Fold8 cheaper than the iPhone Duo?</h3></summary>
+<div class="faq__a"><p>Yes. The Galaxy Z Fold8 starts at $1,899.99 in the US, while the iPhone Duo starts at $1,999. The Galaxy Z Fold8 Ultra starts at $2,099.99.</p></div>
+</details>
 
-Apple opened pre-orders on October 16, 2026, with availability beginning October 23 in more than 70 countries and regions. Another 28 countries and regions follow on October 30. Early reports say delivery estimates have slipped to late January.
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">Which foldable is lighter?</h3></summary>
+<div class="faq__a"><p>The Galaxy Z Fold8 weighs 201g, compared with 254g for the iPhone Duo, a difference of 53g.</p></div>
+</details>
 
-### Is the Galaxy Z Fold8 cheaper than the iPhone Duo?
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">Does the iPhone Duo have Face ID?</h3></summary>
+<div class="faq__a"><p>No. The iPhone Duo uses Touch ID built into the side button, and it can also be unlocked with an Apple Watch.</p></div>
+</details>
 
-Yes. The Galaxy Z Fold8 starts at $1,899.99 in the US, while the iPhone Duo starts at $1,999. The Galaxy Z Fold8 Ultra starts at $2,099.99.
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">Which has better battery life, the iPhone Duo or the Galaxy Z Fold8?</h3></summary>
+<div class="faq__a"><p>It is too early to say. Apple does not publish the Duo's battery capacity and quotes up to 24 hours of typical use. Samsung lists 4,800mAh and up to 26 hours of video playback for the Fold8. Independent testing of the Duo is still needed.</p></div>
+</details>
 
-### Which foldable is lighter?
-
-The Galaxy Z Fold8 weighs 201g, compared with 254g for the iPhone Duo, a difference of 53g.
-
-### Does the iPhone Duo have Face ID?
-
-No. The iPhone Duo uses Touch ID built into the side button, and it can also be unlocked with an Apple Watch.
-
-### Which has better battery life, the iPhone Duo or the Galaxy Z Fold8?
-
-It is too early to say. Apple does not publish the Duo's battery capacity and quotes up to 24 hours of typical use. Samsung lists 4,800mAh and up to 26 hours of video playback for the Fold8. Independent testing of the Duo is still needed.
-
-### Is the iPhone Duo waterproof?
-
-Apple rates the iPhone Duo IP68 for water and dust resistance. The Galaxy Z Fold8 Ultra is rated IP48.
+<details class="faq">
+<summary class="faq__summary"><h3 class="faq__q">Is the iPhone Duo waterproof?</h3></summary>
+<div class="faq__a"><p>Apple rates the iPhone Duo IP68 for water and dust resistance. The Galaxy Z Fold8 Ultra is rated IP48.</p></div>
+</details>
 
 ## Sources and notes
 
