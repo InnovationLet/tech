@@ -1,0 +1,36 @@
+{%- comment -%} Related posts. Prefers same-tag stories, then fills with recent. {%- endcomment -%}
+{%- assign also_max = 3 -%}
+{%- assign also_tag = page.tags | first -%}
+{%- assign also_seen = page.url -%}
+{%- assign also_posts = "" | split: "" -%}
+{%- for post in site.posts -%}
+  {%- if also_tag and post.tags contains also_tag and post.url != page.url -%}
+    {%- assign also_posts = also_posts | push: post -%}
+    {%- assign also_seen = also_seen | append: "|" | append: post.url -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- for post in site.posts -%}
+  {%- if also_posts.size >= also_max %}{% break %}{% endif -%}
+  {%- unless also_seen contains post.url -%}
+    {%- assign also_posts = also_posts | push: post -%}
+    {%- assign also_seen = also_seen | append: "|" | append: post.url -%}
+  {%- endunless -%}
+{%- endfor -%}
+{%- if also_posts.size > 0 -%}
+<section class="also-read" aria-labelledby="also-read-title">
+  <div class="also-read__head">
+    <h2 class="also-read__title" id="also-read-title">Also read</h2>
+  </div>
+  <div class="also-read__grid">
+    {%- for post in also_posts limit: also_max -%}
+    <a class="also-read__item" href="{{ post.url | relative_url }}" rel="noopener">
+      {%- if post.tags.size > 0 -%}
+      <span class="also-read__tag">{{ post.tags | first }}</span>
+      {%- endif -%}
+      <span class="also-read__headline">{{ post.title | escape }}</span>
+      <time class="also-read__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}

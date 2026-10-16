@@ -31,7 +31,7 @@ The publication is funded by its parent organization and, going forward, by clea
 
 ## Corrections
 
-We correct mistakes. To report one, email [hello@innovationlet.com](mailto:hello@innovationlet.com) with the article URL and the claim in question. See the [editorial standards]({{ '/editorial-standards/' | relative_url }}) for how corrections are handled.
+We correct mistakes. To report one, email [hello@f9xr.org](mailto:hello@f9xr.org) with the article URL and the claim in question. See the [editorial standards]({{ '/editorial-standards/' | relative_url }}) for how corrections are handled.
 
 ## The network
 
@@ -48,7 +48,7 @@ InnovationLet publishes across eight desks:
 
 ## Get in touch
 
-- Editorial and pitches: [hello@innovationlet.com](mailto:hello@innovationlet.com)
-- Advertising and partnerships: [hello@innovationlet.com](mailto:hello@innovationlet.com)
+- Editorial and pitches: [hello@f9xr.org](mailto:hello@f9xr.org)
+- Advertising and partnerships: [hello@f9xr.org](mailto:hello@f9xr.org)
 - More ways to reach us: [contact page]({{ '/contact/' | relative_url }})
 - Subscribe to the weekly brief: [InnovationLet]({{ site.main_site }}/#subscribe)

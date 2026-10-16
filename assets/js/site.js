@@ -51,6 +51,20 @@
     if ("ResizeObserver" in window) new ResizeObserver(sizeFooter).observe(footer);
   }
 
+  /* -------------------------------------------------- Back to top */
+  var toTop = document.querySelector("[data-back-to-top]");
+  if (toTop) {
+    var syncToTop = function () {
+      toTop.hidden = window.scrollY < 500;
+    };
+    window.addEventListener("scroll", syncToTop, { passive: true });
+    syncToTop();
+    toTop.addEventListener("click", function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    });
+  }
+
   var article = document.getElementById("article-body");
   if (!article) return;
 

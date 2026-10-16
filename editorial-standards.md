@@ -21,7 +21,7 @@ Every story carries a byline. Desk-wide reporting is published under [Innovation
 ## Corrections
 
 - If we get something wrong, we correct it. Substantive corrections carry a note stating what changed and when.
-- To report an error, email [hello@innovationlet.com](mailto:hello@innovationlet.com) with the article URL and the specific claim you believe is wrong. We aim to respond within three working days.
+- To report an error, email [hello@f9xr.org](mailto:hello@f9xr.org) with the article URL and the specific claim you believe is wrong. We aim to respond within three working days.
 - We do not silently edit the meaning of a published story.
 
 ## Independence and funding
@@ -42,4 +42,4 @@ Finance, economy and government coverage can affect readers' money, livelihoods 
 
 ## Contact
 
-Editorial and pitches: [hello@innovationlet.com](mailto:hello@innovationlet.com). See our [contact page]({{ '/contact/' | relative_url }}) for other ways to reach the desk.
+Editorial and pitches: [hello@f9xr.org](mailto:hello@f9xr.org). See our [contact page]({{ '/contact/' | relative_url }}) for other ways to reach the desk.

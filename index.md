@@ -26,7 +26,7 @@ Devices, software, platforms, and engineering practice. Every story is filed und
 The desk publishes daily during the week. Subscribe to the newsletter for a weekly round-up.
 
 **Can I pitch a guest post?**
-Yes. Send a short pitch to hello@innovationlet.com. We review submissions weekly and reply to every one.
+Yes. Send a short pitch to hello@f9xr.org. We review submissions weekly and reply to every one.
 
 **Where can I find the other categories?**
 The full network covers artificial intelligence, space, finance, startups, economy, governments, and gaming.
@@ -49,7 +49,7 @@ The full network covers artificial intelligence, space, finance, startups, econo
     {
       "@type": "Question",
       "name": "Can I pitch a guest post to InnovationLet Tech?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send a short pitch to hello@innovationlet.com. Submissions are reviewed weekly." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send a short pitch to hello@f9xr.org. Submissions are reviewed weekly." }
     },
     {
       "@type": "Question",

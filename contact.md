@@ -10,13 +10,13 @@ InnovationLet Tech is an online publication. The fastest way to reach us is emai
 
 ## Editorial
 
-- News tips and story feedback: [hello@innovationlet.com](mailto:hello@innovationlet.com)
+- News tips and story feedback: [hello@f9xr.org](mailto:hello@f9xr.org)
 - Corrections: email the same address with the article URL and the specific claim you think is wrong. See our [editorial standards]({{ '/editorial-standards/' | relative_url }}) for how we handle corrections.
 - Guest pitches: send a two-paragraph pitch. We review submissions weekly and reply to every one.
 
 ## Advertising and partnerships
 
-Request the media kit at [hello@innovationlet.com](mailto:hello@innovationlet.com). We will follow up with placements, audience data and rates. Sponsored content is always labeled.
+Request the media kit at [hello@f9xr.org](mailto:hello@f9xr.org). We will follow up with placements, audience data and rates. Sponsored content is always labeled.
 
 ## Who we are
 

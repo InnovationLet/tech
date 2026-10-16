@@ -11,6 +11,7 @@ layout: default
 {% assign updated_key = page.updated | date: "%Y-%m-%d" %}
 {% assign show_updated = false %}
 {% if page.updated and updated_key != published_key %}{% assign show_updated = true %}{% endif %}
+{% assign topic_keywords = page.keywords | default: page.tags %}
 <article class="post">
   <header class="post-header">
     <div class="wrap wrap--narrow">
@@ -49,6 +50,8 @@ layout: default
   <footer class="wrap wrap--narrow">
     {% include author-card.html %}
     {% include sharelinks.html %}
+    {% include also-read.html %}
+    {% include post-topics.html %}
     {% include navlinks.html %}
   </footer>
 </article>
@@ -73,7 +76,7 @@ layout: default
   },
   "publisher": { "@id": {{ site.main_site | append: "/#organization" | jsonify }} },
   "articleSection": {{ page.tags | first | default: site.category_name | jsonify }},
-  "keywords": {{ page.tags | join: ", " | jsonify }},
+  "keywords": {{ topic_keywords | join: ", " | jsonify }},
   "wordCount": {{ words }},
   "isAccessibleForFree": true,
   "inLanguage": {{ site.lang | default: "en" | jsonify }},

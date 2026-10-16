@@ -3,6 +3,7 @@ title: "The case for boring infrastructure"
 date: 2026-03-18 10:15:00 +0000
 author: "F9XR News Desk"
 tags: [Platforms]
+keywords: "boring technology, infrastructure, on-call, postgres, legacy systems, system design"
 description: "Novel infrastructure is a bet against your own on-call rotation. Most teams should lose that bet on purpose."
 ---
 

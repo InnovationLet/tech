@@ -38,4 +38,4 @@ We may update these terms as needed. The "last reviewed" date at the top of this
 
 ## Contact
 
-Questions about these terms: [hello@innovationlet.com](mailto:hello@innovationlet.com).
+Questions about these terms: [hello@f9xr.org](mailto:hello@f9xr.org).

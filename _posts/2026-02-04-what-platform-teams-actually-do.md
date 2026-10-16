@@ -3,6 +3,7 @@ title: "What platform teams actually do all day"
 date: 2026-02-04 08:30:00 +0000
 author: "F9XR News Desk"
 tags: [Engineering]
+keywords: "platform engineering, internal developer platform, developer experience, devops, golden path"
 description: "Platform engineering is the most misunderstood role in software. Here is the work behind the job title."
 ---
 

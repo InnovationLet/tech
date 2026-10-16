@@ -31,7 +31,7 @@ If we display advertising in future, ad partners may use cookies or device ident
 
 ## Your rights
 
-Depending on where you live, you may have the right to access, correct or delete the personal data we hold about you, and to object to certain processing. To make a request, email [hello@innovationlet.com](mailto:hello@innovationlet.com). We will respond within the time required by applicable law.
+Depending on where you live, you may have the right to access, correct or delete the personal data we hold about you, and to object to certain processing. To make a request, email [hello@f9xr.org](mailto:hello@f9xr.org). We will respond within the time required by applicable law.
 
 ## Data retention
 
@@ -43,4 +43,4 @@ We may update this policy as our tools change. Material changes will be reflecte
 
 ## Contact
 
-Questions about this policy: [hello@innovationlet.com](mailto:hello@innovationlet.com).
+Questions about this policy: [hello@f9xr.org](mailto:hello@f9xr.org).
