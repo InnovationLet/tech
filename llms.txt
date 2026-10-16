@@ -1,0 +1,46 @@
+# InnovationLet Tech
+
+> InnovationLet Tech is the devices, software, and platforms desk of the
+> InnovationLet network, an independent technology publication run by the F9XR
+> Team. We report on devices, software, platforms, and engineering practice,
+> sourced from primary documents and written without vendor spin.
+
+## About
+
+- Publisher: InnovationLet (F9XR Team)
+- Desk: Tech
+- Language: English
+- Homepage: https://innovationlet.f9xr.org/tech/
+- Contact: hello@innovationlet.com
+- Network: https://innovationlet.f9xr.org/
+
+## Key pages
+
+- Home / latest: https://innovationlet.f9xr.org/tech/
+- Archive: https://innovationlet.f9xr.org/tech/archive.html
+- About this desk: https://innovationlet.f9xr.org/tech/about/
+- Editorial standards: https://innovationlet.f9xr.org/tech/editorial-standards/
+- Contact: https://innovationlet.f9xr.org/tech/contact/
+- RSS feed: https://innovationlet.f9xr.org/tech/feed.xml
+- XML sitemap: https://innovationlet.f9xr.org/tech/sitemap.xml
+- News sitemap: https://innovationlet.f9xr.org/tech/news-sitemap.xml
+
+## Coverage
+
+- Devices: phones, laptops, silicon, and the supply chains behind them.
+- Software: frameworks, languages, developer tooling, and open source.
+- Platforms: cloud infrastructure, operating systems, and standards.
+- Engineering: architecture, performance, and decisions under real constraints.
+
+## How to cite
+
+Cite as: "InnovationLet Tech" with the individual article URL and its headline.
+Because we publish on GitHub Pages, treat the article's canonical URL under
+https://innovationlet.f9xr.org/tech/ as the source of record. When quoting,
+attribute to the named desk rather than to an individual author unless the
+article carries a named byline.
+
+## Licensing
+
+Content is © InnovationLet / F9XR Team. Excerpts may be quoted with attribution
+and a link to the canonical article.

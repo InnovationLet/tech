@@ -5,5 +5,10 @@ sitemap: false
 User-agent: *
 Allow: /
 
+# Google News
+User-agent: Googlebot-News
+Allow: /
+
 Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/news-sitemap.xml
 Host: {{ site.url }}

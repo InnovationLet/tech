@@ -1,21 +1,24 @@
 {% assign share_url = page.url | absolute_url | url_encode %}
 {% assign share_title = page.title | url_encode %}
-<div class="share">
+<div class="share" aria-label="Share this article">
   <span class="share__label">Share</span>
   <a class="share__btn" rel="noopener nofollow" target="_blank" title="Share on X"
      href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}&via={{ site.twitter_username }}">
-    X
+    {% include icon.html name="twitter" size=16 %}<span class="share__text">X</span>
   </a>
   <a class="share__btn" rel="noopener nofollow" target="_blank" title="Share on LinkedIn"
      href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}">
-    LinkedIn
+    {% include icon.html name="linkedin" size=16 %}<span class="share__text">LinkedIn</span>
   </a>
   <a class="share__btn" rel="noopener nofollow" target="_blank" title="Share on Facebook"
      href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}">
-    Facebook
+    {% include icon.html name="facebook" size=16 %}<span class="share__text">Facebook</span>
   </a>
   <a class="share__btn" rel="noopener nofollow" title="Share by email"
      href="mailto:?subject={{ share_title }}&body={{ share_url }}">
-    Email
+    {% include icon.html name="mail" size=16 %}<span class="share__text">Email</span>
   </a>
+  <button class="share__btn" type="button" data-copy-url title="Copy article URL">
+    {% include icon.html name="copy" size=16 %}<span class="share__text" data-copy-label>Copy URL</span>
+  </button>
 </div>

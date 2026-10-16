@@ -5,7 +5,13 @@
   {%- assign seo_full_title = site.title -%}
 {%- endif -%}
 {%- assign seo_desc = page.description | default: site.description | strip_newlines -%}
-{%- assign seo_image = page.image.path | default: "/assets/images/og-image.png" | absolute_url -%}
+{%- assign seo_image_raw = page.image.path | default: page.image | default: "/assets/images/og-image.png" -%}
+{%- if seo_image_raw contains "://" -%}
+  {%- assign seo_image = seo_image_raw -%}
+{%- else -%}
+  {%- assign seo_image = seo_image_raw | absolute_url -%}
+{%- endif -%}
+{%- assign seo_image_alt = page.image.alt | default: seo_title -%}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +25,12 @@
   {% endif %}
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% if site.google_site_verification and site.google_site_verification != "" %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+  {% endif %}
+  {% if site.adsense.enabled and site.adsense.client and site.adsense.client != "" %}
+  <meta name="google-adsense-account" content="{{ site.adsense.client }}">
+  {% endif %}
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="{{ site.title | escape }}">
@@ -38,9 +50,9 @@
   <meta property="og:description" content="{{ seo_desc | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ seo_image }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="InnovationLet — technology and innovation, decoded">
+  <meta property="og:image:width" content="{{ page.image.width | default: 1200 }}">
+  <meta property="og:image:height" content="{{ page.image.height | default: 630 }}">
+  <meta property="og:image:alt" content="{{ seo_image_alt | escape }}">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -52,6 +64,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% if site.adsense.enabled and site.adsense.client and site.adsense.client != "" %}
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+  {% endif %}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
@@ -73,14 +88,30 @@
   </script>
   {% endif %}
 
+  {% if jekyll.environment == "production" and site.adsense.enabled and site.adsense.client and site.adsense.client != "" %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense.client }}" crossorigin="anonymous"></script>
+  {% endif %}
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "InnovationLet",
+    "@id": "{{ site.main_site }}/#organization",
+    "name": {{ site.publisher.legal_name | default: "InnovationLet" | jsonify }},
     "url": {{ site.main_site | jsonify }},
-    "logo": "{{ site.url }}{{ site.baseurl }}/favicon.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.main_site }}{{ site.publisher.logo.path | default: '/assets/images/og-image.png' }}",
+      "width": {{ site.publisher.logo.width | default: 1200 }},
+      "height": {{ site.publisher.logo.height | default: 630 }}
+    },
     "description": "Independent technology publication covering AI, space, finance, startups, economy, tech, governments and gaming.",
+    "foundingDate": {{ site.publisher.founded | default: "2026" | jsonify }},
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": {{ site.publisher.parent_org | default: "F9XR Team" | jsonify }},
+      "url": {{ site.publisher.parent_url | default: "https://f9xr.org" | jsonify }}
+    },
     "sameAs": [
       "https://twitter.com/innovationlet",
       "https://github.com/innovationlet",
@@ -92,11 +123,12 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website",
     "name": {{ site.title | jsonify }},
     "alternateName": "InnovationLet {{ site.category_name }}",
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "inLanguage": {{ site.lang | default: "en" | jsonify }},
-    "publisher": { "@type": "Organization", "name": "InnovationLet", "url": {{ site.main_site | jsonify }} }
+    "publisher": { "@id": "{{ site.main_site }}/#organization" }
   }
   </script>
 </head>

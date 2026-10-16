@@ -1,0 +1,36 @@
+{% assign author_name = page.author | default: site.author %}
+{% assign author = site.data.authors[author_name] %}
+{% if author %}
+<aside class="author-card" aria-label="About the author">
+  <div class="author-card__head">
+    <span class="author-card__avatar" aria-hidden="true">iL</span>
+    <span class="author-card__id">
+      <span class="author-card__name">{{ author.name }}</span>
+      <span class="author-card__title">{{ author.title }}</span>
+    </span>
+  </div>
+  {% if author.bio %}
+  <p class="author-card__bio">{{ author.bio | strip_newlines }}</p>
+  {% endif %}
+  {% if author.sameAs %}
+  <ul class="author-card__social">
+    {% for profile in author.sameAs %}
+    <li>
+      <a href="{{ profile }}" rel="noopener me" target="_blank" aria-label="{{ author.name }} on {{ profile | split: '//' | last | split: '/' | first }}">
+        {% assign host = profile | split: '//' | last | split: '/' | first | downcase %}
+        {% if host contains 'linkedin' %}{% assign net = 'linkedin' %}
+        {% elsif host contains 'instagram' %}{% assign net = 'instagram' %}
+        {% elsif host contains 'youtube' %}{% assign net = 'youtube' %}
+        {% elsif host contains 'pinterest' %}{% assign net = 'pinterest' %}
+        {% elsif host contains 'github' %}{% assign net = 'github' %}
+        {% elsif host contains 'twitter' or host contains 'x.com' %}{% assign net = 'twitter' %}
+        {% else %}{% assign net = 'globe' %}{% endif %}
+        {% include icon.html name=net size=16 %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <a class="author-card__link" href="{{ author.url | relative_url }}">About this desk &rarr;</a>
+</aside>
+{% endif %}

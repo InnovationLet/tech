@@ -1,0 +1,31 @@
+{%- comment -%} Article toolbar: listen, text size, print, share/copy. {%- endcomment -%}
+<div class="post-toolbar" role="toolbar" aria-label="Article tools">
+  <button class="tool" type="button" data-listen data-state="idle" aria-pressed="false">
+    <span class="tool__icons">
+      {% include icon.html name="volume" size=16 class="tool__icon-play" %}
+      {% include icon.html name="pause" size=16 class="tool__icon-pause" %}
+    </span>
+    <span class="tool__label" data-listen-label>Listen</span>
+  </button>
+
+  <div class="tool tool--group" role="group" aria-label="Text size">
+    <button class="tool__btn" type="button" data-fontsize="down" aria-label="Decrease text size">{% include icon.html name="minus" size=16 %}</button>
+    {% include icon.html name="type" size=16 class="tool__type" %}
+    <button class="tool__btn" type="button" data-fontsize="up" aria-label="Increase text size">{% include icon.html name="plus" size=16 %}</button>
+  </div>
+
+  <button class="tool" type="button" data-print>
+    {% include icon.html name="printer" size=16 %}
+    <span class="tool__label">Print</span>
+  </button>
+
+  <button class="tool" type="button" data-share hidden>
+    {% include icon.html name="share" size=16 %}
+    <span class="tool__label">Share</span>
+  </button>
+
+  <button class="tool" type="button" data-copy-url>
+    {% include icon.html name="copy" size=16 %}
+    <span class="tool__label" data-copy-label>Copy link</span>
+  </button>
+</div>

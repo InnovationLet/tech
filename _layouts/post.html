@@ -3,32 +3,51 @@ layout: default
 ---
 {% assign words = content | number_of_words %}
 {% assign readtime = words | divided_by: 200 | plus: 1 %}
-<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+{% assign author_name = page.author | default: site.author %}
+{% assign author = site.data.authors[author_name] %}
+{% assign post_image = page.image.path | default: page.image | default: '/assets/images/og-image.png' %}
+{% unless post_image contains '://' %}{% assign post_image = post_image | absolute_url %}{% endunless %}
+{% assign published_key = page.date | date: "%Y-%m-%d" %}
+{% assign updated_key = page.updated | date: "%Y-%m-%d" %}
+{% assign show_updated = false %}
+{% if page.updated and updated_key != published_key %}{% assign show_updated = true %}{% endif %}
+<article class="post">
   <header class="post-header">
     <div class="wrap wrap--narrow">
-      {% if page.tags.size > 0 %}
-      <span class="tag" itemprop="articleSection">{{ page.tags | first }}</span>
-      {% endif %}
-      <h1 class="post-title" itemprop="headline">{{ page.title | escape }}</h1>
+      {% include breadcrumbs.html %}
+      <div class="post-masthead">
+        {% if page.tags.size > 0 %}<span class="tag">{{ page.tags | first }}</span>{% endif %}
+        <span class="post-masthead__rule" aria-hidden="true"></span>
+        <time class="post-masthead__date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%A, %B %-d, %Y" }}</time>
+      </div>
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+      {% if page.subtitle %}<p class="post-standfirst">{{ page.subtitle | escape }}</p>{% endif %}
       <p class="post-meta">
-        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        {% if page.updated %}
-        &middot; Updated <time itemprop="dateModified" datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%b %-d, %Y" }}</time>
-        {% endif %}
-        &middot; <span>{{ readtime }} min read</span>
-        {% assign author = page.author | default: site.author %}
-        {% if author %}
-        &middot; <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">{{ author }}</span></span>
+        <span class="post-meta__author">By {{ author.name | default: author_name }}</span>
+        <span class="post-meta__sep" aria-hidden="true">&middot;</span>
+        <span>{{ readtime }} min read</span>
+        {% if show_updated %}
+        <span class="post-meta__sep" aria-hidden="true">&middot;</span>
+        <span>Updated <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: "%b %-d, %Y" }}</time></span>
         {% endif %}
       </p>
     </div>
   </header>
 
-  <div class="wrap wrap--narrow post-body" itemprop="articleBody">
+  <div class="wrap wrap--narrow">
+    {% include post-toolbar.html %}
+  </div>
+
+  <div class="wrap wrap--narrow post-body prose" id="article-body">
+    {% include quick-summary.html %}
     {{ content }}
+    {% if page.disclaimer %}
+    <p class="post-disclaimer">{{ page.disclaimer }}</p>
+    {% endif %}
   </div>
 
   <footer class="wrap wrap--narrow">
+    {% include author-card.html %}
     {% include sharelinks.html %}
     {% include navlinks.html %}
   </footer>
@@ -38,28 +57,29 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ page.url | absolute_url | jsonify }} },
   "headline": {{ page.title | jsonify }},
   "description": {{ page.description | default: page.excerpt | strip_html | truncate: 160 | jsonify }},
+  "image": [{{ post_image | jsonify }}],
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
   "dateModified": {{ page.updated | default: page.date | date_to_xmlschema | jsonify }},
-  "mainEntityOfPage": {{ page.url | absolute_url | jsonify }},
-  "url": {{ page.url | absolute_url | jsonify }},
-  "image": ["{{ site.url }}{{ site.baseurl }}/assets/images/og-image.png"],
   "author": {
-    "@type": "Person",
-    "name": {{ page.author | default: site.author | jsonify }},
-    "url": "{{ site.url }}{{ site.baseurl }}/about/"
+    "@type": {{ author.type | default: "Organization" | jsonify }},
+    "name": {{ author.name | default: author_name | jsonify }},
+    "url": {{ author.url | default: "/about/" | absolute_url | jsonify }}
+    {%- if author.sameAs %},
+    "sameAs": {{ author.sameAs | jsonify }}
+    {%- endif %}
   },
-  "publisher": {
-    "@type": "Organization",
-    "name": "InnovationLet",
-    "url": {{ site.main_site | jsonify }},
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{ site.baseurl }}/favicon.svg"
-    }
-  },
+  "publisher": { "@id": {{ site.main_site | append: "/#organization" | jsonify }} },
   "articleSection": {{ page.tags | first | default: site.category_name | jsonify }},
-  "inLanguage": {{ site.lang | default: "en" | jsonify }}
+  "keywords": {{ page.tags | join: ", " | jsonify }},
+  "wordCount": {{ words }},
+  "isAccessibleForFree": true,
+  "inLanguage": {{ site.lang | default: "en" | jsonify }},
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".post-title", ".post-body"]
+  }
 }
 </script>

@@ -47,7 +47,7 @@ layout: default
         <span class="cat-card__dot" aria-hidden="true"></span>
         <span class="cat-card__body">
           <span class="cat-card__name">{{ cat.name }}</span>
-          <span class="cat-card__meta">innovationlet.github.io{{ cat.url }}</span>
+          <span class="cat-card__meta">{{ site.url | remove: "https://" }}{{ cat.url }}</span>
         </span>
         <span class="cat-card__arrow" aria-hidden="true">&rarr;</span>
       </a>

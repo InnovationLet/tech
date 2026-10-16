@@ -1,0 +1,25 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="breadcrumbs__list">
+    <li class="breadcrumbs__item"><a href="{{ '/' | relative_url }}">{{ site.category_name | default: 'Home' }}</a></li>
+    <li class="breadcrumbs__item breadcrumbs__item--current" aria-current="page">{{ page.title | escape }}</li>
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": {{ site.category_name | default: "Home" | jsonify }},
+      "item": {{ '/' | absolute_url | jsonify }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | default: site.title | jsonify }}
+    }
+  ]
+}
+</script>

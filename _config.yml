@@ -8,16 +8,29 @@ description: >-
   InnovationLet Tech reports on devices, software, platforms, and the
   engineering decisions that shape modern technology. Independent,
   jargon-free coverage from the InnovationLet editorial desk.
-author: "InnovationLet Editorial"
+author: "F9XR News Desk"
 email: "hello@innovationlet.com"
 
 lang: "en"
 locale: "en_US"
+timezone: "UTC"
 
-# Site root. All category sites live under https://innovationlet.github.io/
-url: "https://innovationlet.github.io"
+# Site root. All category sites live under https://innovationlet.f9xr.org/
+url: "https://innovationlet.f9xr.org"
 baseurl: "/tech"
-main_site: "https://innovationlet.github.io"
+main_site: "https://innovationlet.f9xr.org"
+
+# Publisher / trust identity (used by Organization + NewsArticle schema)
+publisher:
+  legal_name: "InnovationLet"
+  parent_org: "F9XR Team"
+  parent_url: "https://f9xr.org"
+  founded: "2026"
+  publishing_principles: "https://innovationlet.f9xr.org/tech/editorial-standards/"
+  logo:
+    path: "/og-image.png"
+    width: 1200
+    height: 630
 
 # Category identity used by the shared theme
 category_name: "Tech"
@@ -44,6 +57,18 @@ social:
 twitter:
   username: "innovationlet"
   card: "summary_large_image"
+
+# Google AdSense. Leave `client` empty to keep all ad code disabled.
+# Set `client` to your "ca-pub-XXXXXXXXXXXXXXXX" ID to activate the loader,
+# the ads.txt line, and the sitewide verification meta tag.
+adsense:
+  enabled: false
+  client: ""
+  # Optional per-placement slot IDs (used by the in-article ad unit).
+  slot: ""
+
+# Google Search Console / site verification (optional).
+google_site_verification: ""
 
 plugins:
   - jekyll-feed
@@ -75,7 +100,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "InnovationLet Editorial"
+      author: "F9XR News Desk"
   - scope:
       path: ""
       type: "pages"

@@ -1,0 +1,35 @@
+{%- assign ai_url = page.url | absolute_url -%}
+{%- assign ai_prompt = "Summarize this article in clear key points: " | append: ai_url -%}
+{%- assign ai_query = ai_prompt | url_encode -%}
+{%- if page.key_points or page.description -%}
+<section class="quick-summary" aria-labelledby="quick-summary-title">
+  <div class="quick-summary__head">
+    {% include icon.html name="sparkles" size=18 class="quick-summary__spark" %}
+    <h2 class="quick-summary__title" id="quick-summary-title">Quick summary</h2>
+  </div>
+  {%- if page.key_points -%}
+  <ul class="quick-summary__list">
+    {%- for point in page.key_points -%}
+    <li>{{ point }}</li>
+    {%- endfor -%}
+  </ul>
+  {%- elsif page.description -%}
+  <p class="quick-summary__lead">{{ page.description }}</p>
+  {%- endif -%}
+
+  <details class="ai-summary">
+    <summary class="ai-summary__toggle">
+      {% include icon.html name="sparkles" size=15 %}
+      <span>Summarize with AI</span>
+      {% include icon.html name="chevron-down" size=15 class="ai-summary__chevron" %}
+    </summary>
+    <ul class="ai-summary__list">
+      <li><a rel="noopener nofollow" target="_blank" href="https://chatgpt.com/?q={{ ai_query }}">ChatGPT{% include icon.html name="external-link" size=14 %}</a></li>
+      <li><a rel="noopener nofollow" target="_blank" href="https://gemini.google.com/app">Gemini{% include icon.html name="external-link" size=14 %}</a></li>
+      <li><a rel="noopener nofollow" target="_blank" href="https://claude.ai/new?q={{ ai_query }}">Claude{% include icon.html name="external-link" size=14 %}</a></li>
+      <li><a rel="noopener nofollow" target="_blank" href="https://copilot.microsoft.com/?q={{ ai_query }}">Copilot{% include icon.html name="external-link" size=14 %}</a></li>
+      <li><a rel="noopener nofollow" target="_blank" href="https://www.perplexity.ai/search?q={{ ai_query }}">Perplexity{% include icon.html name="external-link" size=14 %}</a></li>
+    </ul>
+  </details>
+</section>
+{%- endif -%}

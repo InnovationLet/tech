@@ -1,0 +1,10 @@
+---
+layout: null
+sitemap: false
+---
+{%- if site.adsense.enabled and site.adsense.client and site.adsense.client != "" -%}
+google.com, {{ site.adsense.client | remove_first: "ca-" }}, DIRECT, f08c47fec0942fa0
+{%- else -%}
+# AdSense is not configured for this site yet.
+# Set `adsense.enabled: true` and `adsense.client: "ca-pub-XXXXXXXXXXXXXXXX"` in _config.yml.
+{%- endif -%}

@@ -1,7 +1,7 @@
 ---
 title: "The case for boring infrastructure"
 date: 2026-03-18 10:15:00 +0000
-author: "InnovationLet Editorial"
+author: "F9XR News Desk"
 tags: [Platforms]
 description: "Novel infrastructure is a bet against your own on-call rotation. Most teams should lose that bet on purpose."
 ---

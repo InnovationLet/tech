@@ -14,8 +14,25 @@
 
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <a href="{{ '/' | relative_url }}">Home</a>
+
+      <details class="nav-dropdown">
+        <summary class="nav-dropdown__toggle" aria-haspopup="true">
+          Sections {% include icon.html name="chevron-down" size=14 class="nav-dropdown__chevron" %}
+        </summary>
+        <ul class="nav-dropdown__menu">
+          {% for cat in site.data.categories %}
+          <li>
+            <a href="{{ site.url }}{{ cat.url }}">
+              <span class="nav-dropdown__dot" data-accent="{{ cat.accent }}" aria-hidden="true"></span>{{ cat.name }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </details>
+
       <a href="{{ '/archive.html' | relative_url }}">Archive</a>
       <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
       <a class="btn btn--primary btn--sm" href="{{ site.main_site }}/#subscribe">Subscribe</a>
     </nav>
   </div>

@@ -8,6 +8,9 @@ layout: default
       {% if page.description %}
       <p class="page-header__lead">{{ page.description }}</p>
       {% endif %}
+      {% if page.updated %}
+      <p class="page-meta">Last reviewed <time datetime="{{ page.updated | date_to_xmlschema }}">{{ page.updated | date: '%B %-d, %Y' }}</time></p>
+      {% endif %}
     </div>
   </header>
   <div class="wrap wrap--narrow prose">

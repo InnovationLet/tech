@@ -1,0 +1,46 @@
+# Author registry. The key must match the `author` value used in a post's
+# front matter (or `site.author`). Add a `Person` entry here once a named
+# reporter has a public byline and bio page.
+#
+# Fields:
+#   type    - "Organization" (collective byline) or "Person" (named reporter)
+#   name    - display name used in the byline and schema
+#   title   - short role shown under the name on the author card
+#   url     - bio page (absolute or site-relative)
+#   image   - headshot or logo
+#   sameAs  - public profiles used for entity verification
+#   bio     - short disclosure of who is responsible for the reporting
+
+"F9XR News Desk":
+  type: "Organization"
+  name: "F9XR News Desk"
+  title: "Reported by the F9XR News Desk · InnovationLet Tech"
+  url: "https://f9xr.org/"
+  image: "/assets/images/og-image.png"
+  sameAs:
+    - "https://f9xr.org/"
+    - "https://linkedin.com/company/f9xrteam"
+    - "https://instagram.com/f9xrteam"
+    - "https://youtube.com/@QuarterlyLIV"
+    - "https://pinterest.com/f9xr"
+    - "https://github.com/f9xr"
+  bio: >-
+    The F9XR News Desk is a team of journalists working around the clock to
+    gather, verify and report technology news, market analysis and policy
+    updates. One desk, every timezone.
+
+"InnovationLet Editorial":
+  type: "Organization"
+  name: "InnovationLet Editorial"
+  title: "Reported and edited by the Tech desk"
+  url: "/about/"
+  image: "/assets/images/og-image.png"
+  sameAs:
+    - "https://twitter.com/innovationlet"
+    - "https://github.com/innovationlet"
+    - "https://www.linkedin.com/company/innovationlet"
+  bio: >-
+    InnovationLet Editorial is the collective byline used by the staff of the
+    InnovationLet Tech desk. Stories carrying this byline are reported and
+    edited by the desk team, sourced from primary documents, and reviewed
+    against our editorial standards before publication.
