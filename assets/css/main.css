@@ -55,7 +55,7 @@
 	--ss03: "calt", "kern", "liga", "ss03";
 
 	--font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-	--font-read: "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+	--font-read: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 	--header-bg: rgba(7, 8, 10, 0.9);
 }
 
@@ -113,6 +113,7 @@ body {
 	font-weight: 400;
 	line-height: 1.6;
 	font-feature-settings: var(--ss03);
+	font-optical-sizing: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
@@ -376,10 +377,10 @@ a { color: inherit; }
 .prose {
 	color: var(--body);
 	font-family: var(--font-read);
-	font-size: 18px;
-	line-height: 1.72;
-	letter-spacing: 0.006em;
-	word-spacing: 0.012em;
+	font-size: 18.5px;
+	line-height: 1.7;
+	letter-spacing: 0.003em;
+	word-spacing: 0.01em;
 	text-wrap: pretty;
 }
 .prose > * + * { margin-top: var(--s-xl); }
@@ -1064,7 +1065,7 @@ body { top: 0 !important; }
 /* ==========================================================================
    Reading scale (A- / A+ control)
    ========================================================================== */
-.post-body.prose { font-size: calc(18px * var(--reading-scale, 1)); }
+.post-body.prose { font-size: calc(18.5px * var(--reading-scale, 1)); }
 
 /* ==========================================================================
    Footer reveal (footer sits behind content, uncovered at the bottom)

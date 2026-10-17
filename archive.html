@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Archive"
-description: "Every story published on InnovationLet {{ site.category_name }}."
+description: "Every story published on this desk, newest first, grouped by year."
 permalink: /archive.html
 ---
 {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}

@@ -17,7 +17,10 @@ sitemap: false
         <news:language>{{ site.lang | default: "en" }}</news:language>
       </news:publication>
       <news:publication_date>{{ post.date | date_to_xmlschema }}</news:publication_date>
-      <news:title>{{ post.title | xml_escape }}</news:title>
+      <news:title>{{ post.title | truncate: 100, "" | xml_escape }}</news:title>
+      {%- if post.tags and post.tags.size > 0 %}
+      <news:keywords>{{ post.tags | join: ", " | xml_escape }}</news:keywords>
+      {%- endif %}
     </news:news>
   </url>
 {%- endif -%}
