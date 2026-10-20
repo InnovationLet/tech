@@ -111,46 +111,6 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       onScroll();
     }
-
-    /* Auto-link TOC for h2/h3 */
-    var toc = document.querySelector("[data-toc]");
-    var tocList = toc ? toc.querySelector("[data-toc-list]") : null;
-    if (toc && tocList) {
-      var headings = article.querySelectorAll("h2, h3");
-      if (headings.length > 0) {
-        toc.hidden = false;
-        var used = {};
-        headings.forEach(function (h) {
-          if (!h.id) {
-            var base = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section";
-            var id = base;
-            var i = 1;
-            while (document.getElementById(id) || used[id]) {
-              id = base + "-" + i++;
-            }
-            h.id = id;
-            used[id] = true;
-          }
-          var li = document.createElement("li");
-          li.className = h.tagName === "H3" ? "toc__item toc__item--sub" : "toc__item";
-          var a = document.createElement("a");
-          a.href = "#" + h.id;
-          a.textContent = h.textContent.trim();
-          a.className = "toc__link";
-          li.appendChild(a);
-          tocList.appendChild(li);
-        });
-        var links = tocList.querySelectorAll(".toc__link");
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              links.forEach(function (l) { l.classList.toggle("is-active", l.getAttribute("href") === "#" + entry.target.id); });
-            }
-          });
-        }, { rootMargin: "-40% 0px -55% 0px" });
-        headings.forEach(function (h) { obs.observe(h); });
-      }
-    }
   }
 
   /* -------------------------------------------------- Text size control */
