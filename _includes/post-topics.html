@@ -1,6 +1,10 @@
 {%- comment -%} Article footer: Tags as chips, Keywords as the schema keyword string.
 Set `keywords:` in a post's front matter to override; falls back to tags. {%- endcomment -%}
-{%- assign topic_keywords = page.keywords | default: page.tags -%}
+{%- if page.keywords and page.keywords != "" -%}
+  {%- assign topic_keywords_text = page.keywords -%}
+{%- else -%}
+  {%- assign topic_keywords_text = page.tags | join: ", " -%}
+{%- endif -%}
 <footer class="post-topics" aria-label="Article topics">
   {%- if page.tags and page.tags.size > 0 -%}
   <div class="post-topics__row">
@@ -12,10 +16,10 @@ Set `keywords:` in a post's front matter to override; falls back to tags. {%- en
     </ul>
   </div>
   {%- endif -%}
-  {%- if topic_keywords and topic_keywords != "" -%}
+  {%- if topic_keywords_text and topic_keywords_text != "" -%}
   <div class="post-topics__row">
     <span class="post-topics__label">Keywords</span>
-    <span class="post-topics__value">{{ topic_keywords | join: ", " }}</span>
+    <span class="post-topics__value">{{ topic_keywords_text }}</span>
   </div>
   {%- endif -%}
 </footer>

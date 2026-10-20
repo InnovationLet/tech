@@ -16,7 +16,7 @@ InnovationLet Tech is part of InnovationLet, an independent technology publicati
 
 ## Bylines and accountability
 
-Every story carries a byline. Desk-wide reporting is published under [InnovationLet Editorial]({{ '/author/innovationlet-editorial/' | relative_url }}), which means the piece was reported and edited by the Tech desk team. Contributed and guest pieces are labeled as such and name the contributor. We do not publish anonymous bylines on reported news.
+Every story carries a byline. Desk-wide reporting is published under [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}), which means the piece was reported and edited by the Tech desk team. Contributed and guest pieces are labeled as such and name the contributor. We do not publish anonymous bylines on reported news.
 
 ## Corrections
 

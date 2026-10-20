@@ -1,6 +1,11 @@
 ---
 layout: null
 sitemap: false
+# NOTE: the 48-hour window below is computed from site.time (the build clock).
+# GitHub Pages only rebuilds on push, so if the repo goes several days without
+# a commit this file can list articles that are older than 48h at fetch time,
+# which Google News may reject. Keep pushing regularly, or rebuild on a
+# schedule, if you rely on Google News inclusion.
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -18,8 +23,9 @@ sitemap: false
       </news:publication>
       <news:publication_date>{{ post.date | date_to_xmlschema }}</news:publication_date>
       <news:title>{{ post.title | truncate: 100, "" | xml_escape }}</news:title>
-      {%- if post.tags and post.tags.size > 0 %}
-      <news:keywords>{{ post.tags | join: ", " | xml_escape }}</news:keywords>
+      {%- assign news_keywords = post.keywords | default: post.tags -%}
+      {%- if news_keywords and news_keywords != "" %}
+      <news:keywords>{{ news_keywords | join: ", " | xml_escape }}</news:keywords>
       {%- endif %}
     </news:news>
   </url>

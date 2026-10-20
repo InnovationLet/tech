@@ -1,24 +1,24 @@
 <nav class="post-navi" aria-label="Post navigation">
   {% if page.previous.url %}
   <a class="post-navi__item post-navi__prev" href="{{ page.previous.url | relative_url }}" rel="prev">
-    <span class="post-navi__label">Newer</span>
+    <span class="post-navi__label">{% include icon.html name="chevron-right" size=15 class="post-navi__arrow post-navi__arrow--back" %}Newer</span>
     <span class="post-navi__title">{{ page.previous.title | escape }}</span>
   </a>
   {% else %}
-  <a class="post-navi__item post-navi__prev" href="{{ '/archive.html' | relative_url }}">
-    <span class="post-navi__label">Back to</span>
+  <a class="post-navi__item post-navi__prev" href="{{ '/archive/' | relative_url }}">
+    <span class="post-navi__label">{% include icon.html name="chevron-right" size=15 class="post-navi__arrow post-navi__arrow--back" %}Back to</span>
     <span class="post-navi__title">All stories</span>
   </a>
   {% endif %}
 
   {% if page.next.url %}
   <a class="post-navi__item post-navi__next" href="{{ page.next.url | relative_url }}" rel="next">
-    <span class="post-navi__label">Older</span>
+    <span class="post-navi__label">Older{% include icon.html name="chevron-right" size=15 class="post-navi__arrow" %}</span>
     <span class="post-navi__title">{{ page.next.title | escape }}</span>
   </a>
   {% else %}
-  <a class="post-navi__item post-navi__next" href="{{ '/archive.html' | relative_url }}">
-    <span class="post-navi__label">Browse</span>
+  <a class="post-navi__item post-navi__next" href="{{ '/archive/' | relative_url }}">
+    <span class="post-navi__label">Browse{% include icon.html name="chevron-right" size=15 class="post-navi__arrow" %}</span>
     <span class="post-navi__title">The full archive</span>
   </a>
   {% endif %}

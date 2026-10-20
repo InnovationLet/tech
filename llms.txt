@@ -17,7 +17,7 @@
 ## Key pages
 
 - Home / latest: https://innovationlet.f9xr.org/tech/
-- Archive: https://innovationlet.f9xr.org/tech/archive.html
+- Archive: https://innovationlet.f9xr.org/tech/archive/
 - About this desk: https://innovationlet.f9xr.org/tech/about/
 - Editorial standards: https://innovationlet.f9xr.org/tech/editorial-standards/
 - Contact: https://innovationlet.f9xr.org/tech/contact/

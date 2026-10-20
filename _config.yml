@@ -70,6 +70,10 @@ adsense:
 # Google Search Console / site verification (optional).
 google_site_verification: ""
 
+# Google Analytics (GA4 measurement id, e.g. "G-XXXXXXXXXX").
+# The gtag snippet in _includes/head.html only renders when this is set.
+# google_analytics: ""
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -78,6 +82,10 @@ feed:
   path: "feed.xml"
 
 show_excerpts: true
+
+# Post URLs: slug only — no category/date segments. Individual posts may
+# still override this with an explicit `permalink:` in front matter.
+permalink: /:title/
 
 # Publish posts dated later than the build time. News desks date stories to the
 # day they run, which is often ahead of the UTC build clock.

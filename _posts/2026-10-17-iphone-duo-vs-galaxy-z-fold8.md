@@ -27,7 +27,7 @@ Apple's first foldable is no longer a rumor. The company unveiled the **iPhone D
 So which one should you buy? Short answer: the Galaxy Z Fold8 is lighter, thinner and cheaper, and it is the more mature foldable today. The iPhone Duo has a newer chip, an IP68 rating, a very large battery-life claim and the Apple ecosystem behind it. This guide walks through both phones using official specifications from Apple and Samsung, plus early comparison data from independent outlets. Where something has not been independently tested yet, we say so, in line with [our editorial standards]({{ '/editorial-standards/' | relative_url }}).
 
 <figure class="post-figure">
-  <img src="{{ '/assets/images/galaxy-z-fold8.jpg' | relative_url }}" alt="Samsung Galaxy Z Fold8 shown with its cover display and inner display open" width="1920" height="930" loading="lazy" decoding="async">
+  <img src="{{ '/assets/images/galaxy-z-fold8.jpg' | relative_url }}" alt="Samsung Galaxy Z Fold8 shown with its cover display and inner display open" width="1920" height="930" loading="eager" fetchpriority="high" decoding="async">
   <figcaption>The Galaxy Z Fold8, Samsung's new wider fold. Image: Samsung</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ If you are an iPhone user, the Duo is worth considering once independent reviews
   <li><strong>Unproven claims:</strong> Apple's battery and sustained-performance figures for the Duo have not been independently tested yet.</li>
 </ul>
 
-For more device coverage, browse the [InnovationLet Tech archive]({{ '/archive.html' | relative_url }}). This guide was produced by the [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}); corrections and tips go to the [contact page]({{ '/contact/' | relative_url }}).
+For more device coverage, browse the [InnovationLet Tech archive]({{ '/archive/' | relative_url }}). This guide was produced by the [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}); corrections and tips go to the [contact page]({{ '/contact/' | relative_url }}).
 
 ## Frequently asked questions
 
@@ -252,7 +252,7 @@ Specifications and prices are accurate as of October 17, 2026 and may change. Ba
     },
     {
       "@type": "Question",
-      "name": "Which foldable is lighter, the iPhone Duo or the Galaxy Z Fold8?",
+      "name": "Which foldable is lighter?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The Galaxy Z Fold8 weighs 201g, compared with 254g for the iPhone Duo, a difference of 53g."
@@ -268,7 +268,7 @@ Specifications and prices are accurate as of October 17, 2026 and may change. Ba
     },
     {
       "@type": "Question",
-      "name": "Which has better battery life, iPhone Duo or Galaxy Z Fold8?",
+      "name": "Which has better battery life, the iPhone Duo or the Galaxy Z Fold8?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "It is too early to say. Apple does not publish the Duo's battery capacity and quotes up to 24 hours of typical use. Samsung lists 4,800mAh and up to 26 hours of video playback for the Fold8. Independent testing of the Duo is still needed."

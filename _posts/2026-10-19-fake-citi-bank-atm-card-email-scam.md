@@ -192,6 +192,8 @@ Scammers do not only pretend to be big banks. Small businesses get copied too, a
 
 ## How F9XR Team Can Help
 
+> **Disclosure:** F9XR Team is the parent company of InnovationLet. The services described in this section belong to our parent organization and are promotional in nature. Nothing here was paid for or requested by an advertiser, and no advertiser has any influence over this or any other story on this desk.
+
 To be clear about scope: F9XR Team is not a fraud recovery or cybersecurity incident firm. If you have lost money, go to your bank and the authorities first. What F9XR Team can do is help your business look trustworthy, stay consistent and be easier for real customers to find and verify. That includes:
 
 - **Website development and redesign** with clear contact pages, trust signals and a professional structure that customers can recognize as genuine.
@@ -212,7 +214,7 @@ If your site, profiles or contact pages need a trust upgrade, the F9XR Team can 
   <li><strong>Businesses are prime targets:</strong> train staff, protect shared inboxes and keep your own brand information consistent so customers can tell what is real.</li>
 </ul>
 
-Stay alert, report what you see and keep your inbox boring. For more coverage of online safety and scam alerts, browse the [InnovationLet Tech archive]({{ '/archive.html' | relative_url }}). This report was produced by the [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}); corrections and tips go to the [contact page]({{ '/contact/' | relative_url }}).
+Stay alert, report what you see and keep your inbox boring. For more coverage of online safety and scam alerts, browse the [InnovationLet Tech archive]({{ '/archive/' | relative_url }}). This report was produced by the [F9XR News Desk]({{ '/author/f9xr-news-desk/' | relative_url }}); corrections and tips go to the [contact page]({{ '/contact/' | relative_url }}).
 
 ## Frequently asked questions
 

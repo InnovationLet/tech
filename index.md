@@ -15,7 +15,7 @@ InnovationLet Tech is the hardware and software desk of the InnovationLet networ
 
 ## How we report
 
-We follow primary sources first: release notes, filings, standards documents, and repositories. When we cite a claim, we link it. When we don't know something, we say so. The desk publishes daily, with a longer brief each week for subscribers.
+We follow primary sources first: release notes, filings, standards documents, and repositories. When we cite a claim, we link it. When we don't know something, we say so. The desk publishes as stories develop, with a longer brief each week for subscribers.
 
 ## Frequently asked questions
 
@@ -23,7 +23,7 @@ We follow primary sources first: release notes, filings, standards documents, an
 Devices, software, platforms, and engineering practice. Every story is filed under one of those four areas.
 
 **How often is it updated?**
-The desk publishes daily during the week. Subscribe to the newsletter for a weekly round-up.
+The desk publishes as stories develop. Subscribe to the newsletter for a weekly round-up.
 
 **Can I pitch a guest post?**
 Yes. Send a short pitch to hello@f9xr.org. We review submissions weekly and reply to every one.
@@ -43,18 +43,18 @@ The full network covers artificial intelligence, space, finance, startups, econo
     },
     {
       "@type": "Question",
-      "name": "How often is InnovationLet Tech updated?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The desk publishes daily during the week, with a weekly round-up for newsletter subscribers." }
+      "name": "How often is it updated?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The desk publishes as stories develop. Subscribe to the newsletter for a weekly round-up." }
     },
     {
       "@type": "Question",
-      "name": "Can I pitch a guest post to InnovationLet Tech?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send a short pitch to hello@f9xr.org. Submissions are reviewed weekly." }
+      "name": "Can I pitch a guest post?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send a short pitch to hello@f9xr.org. We review submissions weekly and reply to every one." }
     },
     {
       "@type": "Question",
-      "name": "Where can I find the other InnovationLet categories?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The network covers artificial intelligence, space, finance, startups, economy, tech, governments, and gaming." }
+      "name": "Where can I find the other categories?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The full network covers artificial intelligence, space, finance, startups, economy, governments, and gaming." }
     }
   ]
 }

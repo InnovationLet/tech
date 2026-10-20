@@ -17,7 +17,7 @@ layout: default
   <div class="wrap">
     <div class="section__head">
       <h2 class="section__title">Latest in {{ site.category_name }}</h2>
-      <a class="section__link" href="{{ '/archive.html' | relative_url }}">All stories &rarr;</a>
+      <a class="section__link" href="{{ '/archive/' | relative_url }}">All stories &rarr;</a>
     </div>
     <div class="post-grid">
       {% for post in site.posts limit: 6 %}
@@ -47,7 +47,7 @@ layout: default
         <span class="cat-card__dot" aria-hidden="true"></span>
         <span class="cat-card__body">
           <span class="cat-card__name">{{ cat.name }}</span>
-          <span class="cat-card__meta">{{ site.url | remove: "https://" }}{{ cat.url }}</span>
+          <span class="cat-card__meta">{{ site.url | remove_first: "https://" | remove_first: "http://" }}{{ cat.url }}</span>
         </span>
         <span class="cat-card__arrow" aria-hidden="true">&rarr;</span>
       </a>

@@ -97,6 +97,62 @@
 
   if (!article) return;
 
+  if (article) {
+    /* Read progress */
+    var progressBar = document.querySelector(".read-progress__bar");
+    if (progressBar) {
+      var onScroll = function () {
+        var h = document.documentElement;
+        var scrollTop = h.scrollTop || document.body.scrollTop;
+        var docHeight = h.scrollHeight - h.clientHeight;
+        var pct = docHeight > 0 ? scrollTop / docHeight : 0;
+        progressBar.style.transform = "scaleX(" + pct + ")";
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    /* Auto-link TOC for h2/h3 */
+    var toc = document.querySelector("[data-toc]");
+    var tocList = toc ? toc.querySelector("[data-toc-list]") : null;
+    if (toc && tocList) {
+      var headings = article.querySelectorAll("h2, h3");
+      if (headings.length > 0) {
+        toc.hidden = false;
+        var used = {};
+        headings.forEach(function (h) {
+          if (!h.id) {
+            var base = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section";
+            var id = base;
+            var i = 1;
+            while (document.getElementById(id) || used[id]) {
+              id = base + "-" + i++;
+            }
+            h.id = id;
+            used[id] = true;
+          }
+          var li = document.createElement("li");
+          li.className = h.tagName === "H3" ? "toc__item toc__item--sub" : "toc__item";
+          var a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = h.textContent.trim();
+          a.className = "toc__link";
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+        var links = tocList.querySelectorAll(".toc__link");
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              links.forEach(function (l) { l.classList.toggle("is-active", l.getAttribute("href") === "#" + entry.target.id); });
+            }
+          });
+        }, { rootMargin: "-40% 0px -55% 0px" });
+        headings.forEach(function (h) { obs.observe(h); });
+      }
+    }
+  }
+
   /* -------------------------------------------------- Text size control */
   var SIZES = [0.9, 1, 1.1, 1.2, 1.35, 1.5];
   var sizeIndex = 2;
@@ -224,11 +280,11 @@
     var tPanel = translateWrap.querySelector("[data-translate-panel]");
     var tLangs = translateWrap.querySelector("[data-translate-langs]");
     var LANGS = [
-      ["es", "Spanish"], ["fr", "French"], ["de", "German"], ["pt", "Portuguese"],
-      ["it", "Italian"], ["nl", "Dutch"], ["pl", "Polish"], ["ru", "Russian"],
-      ["tr", "Turkish"], ["ar", "Arabic"], ["hi", "Hindi"], ["bn", "Bengali"],
-      ["zh-CN", "Chinese"], ["ja", "Japanese"], ["ko", "Korean"], ["id", "Indonesian"],
-      ["vi", "Vietnamese"], ["th", "Thai"], ["he", "Hebrew"], ["fa", "Persian"]
+      ["en", "English"], ["es", "Español"], ["fr", "Français"], ["de", "Deutsch"], ["pt", "Português"],
+      ["it", "Italiano"], ["nl", "Nederlands"], ["pl", "Polski"], ["ru", "Русский"],
+      ["tr", "Türkçe"], ["ar", "العربية"], ["hi", "हिन्दी"], ["bn", "বাংলা"],
+      ["zh-CN", "中文 (简体)"], ["ja", "日本語"], ["ko", "한국어"], ["id", "Bahasa Indonesia"],
+      ["vi", "Tiếng Việt"], ["th", "ไทย"], ["he", "עברית"], ["fa", "فارسی"]
     ];
     var gtLoading = false;
 
@@ -239,7 +295,8 @@
     }
 
     function buildLangButtons() {
-      if (!tLangs || tLangs.childElementCount) return;
+      if (!tLangs) return;
+      tLangs.innerHTML = "";
       LANGS.forEach(function (pair) {
         var b = document.createElement("button");
         b.type = "button";
@@ -248,12 +305,6 @@
         b.setAttribute("role", "menuitem");
         tLangs.appendChild(b);
       });
-      var orig = document.createElement("button");
-      orig.type = "button";
-      orig.textContent = "Original (English)";
-      orig.setAttribute("data-lang", "");
-      orig.setAttribute("role", "menuitem");
-      tLangs.appendChild(orig);
     }
 
     function applyGoogleLang(code) {
@@ -275,6 +326,7 @@
       window.googleTranslateElementInit = function () {
         new window.google.translate.TranslateElement({
           pageLanguage: document.documentElement.lang || "en",
+          includedLanguages: LANGS.map(function (p) { return p[0]; }).join(","),
           autoDisplay: false,
           layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
         }, "google_translate_element");
