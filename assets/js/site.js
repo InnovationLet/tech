@@ -327,3 +327,17 @@
     }
   }
 })();
+
+// View Transitions API
+if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    if (a.target === '_blank' || a.hasAttribute('download') || a.href.indexOf(location.origin) !== 0) return;
+    if (a.href.indexOf('#') > -1 && a.pathname === location.pathname) return;
+    e.preventDefault();
+    document.startViewTransition(function() {
+      location.href = a.href;
+    });
+  });
+}
